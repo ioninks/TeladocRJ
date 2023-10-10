@@ -8,14 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B52AAC8C2AD559D700BE3FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */; };
-		B52AAC8E2AD559D700BE3FDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8D2AD559D700BE3FDE /* SceneDelegate.swift */; };
 		B52AAC902AD559D700BE3FDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8F2AD559D700BE3FDE /* ViewController.swift */; };
-		B52AAC932AD559D700BE3FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC912AD559D700BE3FDE /* Main.storyboard */; };
 		B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC942AD559D800BE3FDE /* Assets.xcassets */; };
 		B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */; };
 		B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */; };
-		B52AACAD2AD559D800BE3FDE /* TeladocRJUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACAC2AD559D800BE3FDE /* TeladocRJUITests.swift */; };
-		B52AACAF2AD559D800BE3FDE /* TeladocRJUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACAE2AD559D800BE3FDE /* TeladocRJUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,17 +34,13 @@
 /* Begin PBXFileReference section */
 		B52AAC882AD559D700BE3FDE /* TeladocRJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeladocRJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B52AAC8D2AD559D700BE3FDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B52AAC8F2AD559D700BE3FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B52AAC922AD559D700BE3FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B52AAC942AD559D800BE3FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52AAC972AD559D800BE3FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52AAC992AD559D800BE3FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJTests.swift; sourceTree = "<group>"; };
 		B52AACA82AD559D800BE3FDE /* TeladocRJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B52AACAC2AD559D800BE3FDE /* TeladocRJUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJUITests.swift; sourceTree = "<group>"; };
-		B52AACAE2AD559D800BE3FDE /* TeladocRJUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +73,6 @@
 			children = (
 				B52AAC8A2AD559D700BE3FDE /* TeladocRJ */,
 				B52AACA12AD559D800BE3FDE /* TeladocRJTests */,
-				B52AACAB2AD559D800BE3FDE /* TeladocRJUITests */,
 				B52AAC892AD559D700BE3FDE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,13 +90,9 @@
 		B52AAC8A2AD559D700BE3FDE /* TeladocRJ */ = {
 			isa = PBXGroup;
 			children = (
-				B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */,
-				B52AAC8D2AD559D700BE3FDE /* SceneDelegate.swift */,
-				B52AAC8F2AD559D700BE3FDE /* ViewController.swift */,
-				B52AAC912AD559D700BE3FDE /* Main.storyboard */,
-				B52AAC942AD559D800BE3FDE /* Assets.xcassets */,
-				B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */,
-				B52AAC992AD559D800BE3FDE /* Info.plist */,
+				B5D6E5D62AD586230039495F /* Classes */,
+				B5D6E5D72AD5863B0039495F /* Resources */,
+				B5D6E5D82AD586470039495F /* SupportingFiles */,
 			);
 			path = TeladocRJ;
 			sourceTree = "<group>";
@@ -118,13 +105,54 @@
 			path = TeladocRJTests;
 			sourceTree = "<group>";
 		};
-		B52AACAB2AD559D800BE3FDE /* TeladocRJUITests */ = {
+		B5D6E5D62AD586230039495F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B52AACAC2AD559D800BE3FDE /* TeladocRJUITests.swift */,
-				B52AACAE2AD559D800BE3FDE /* TeladocRJUITestsLaunchTests.swift */,
+				B5D6E5D92AD586930039495F /* Application */,
+				B5D6E5DA2AD586A50039495F /* Presentation */,
+				B5D6E5DB2AD586AF0039495F /* Services */,
 			);
-			path = TeladocRJUITests;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B5D6E5D72AD5863B0039495F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B52AAC942AD559D800BE3FDE /* Assets.xcassets */,
+				B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B5D6E5D82AD586470039495F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B52AAC992AD559D800BE3FDE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B5D6E5D92AD586930039495F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B5D6E5DA2AD586A50039495F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B52AAC8F2AD559D700BE3FDE /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B5D6E5DB2AD586AF0039495F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +261,6 @@
 			files = (
 				B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */,
 				B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */,
-				B52AAC932AD559D700BE3FDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +287,6 @@
 			files = (
 				B52AAC902AD559D700BE3FDE /* ViewController.swift in Sources */,
 				B52AAC8C2AD559D700BE3FDE /* AppDelegate.swift in Sources */,
-				B52AAC8E2AD559D700BE3FDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52AACAD2AD559D800BE3FDE /* TeladocRJUITests.swift in Sources */,
-				B52AACAF2AD559D800BE3FDE /* TeladocRJUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B52AAC912AD559D700BE3FDE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B52AAC922AD559D700BE3FDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,10 +455,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J246HBQE3Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeladocRJ/Info.plist;
+				INFOPLIST_FILE = TeladocRJ/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,10 +482,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J246HBQE3Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TeladocRJ/Info.plist;
+				INFOPLIST_FILE = TeladocRJ/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
