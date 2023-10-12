@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     self.window = UIWindow(frame: UIScreen.main.bounds)
     
-    let viewController = ViewController(nibName: nil, bundle: nil)
+    let fileURL = Bundle.main.url(forResource: "Romeo-and-Juliet", withExtension: "txt")!
+    let viewModel = WordFrequenciesListViewModel(
+      fileURL: fileURL,
+      dependencies: .init(
+        fileReaderService: FileReaderService(),
+        wordsCounterService: WordsCounterService()
+      )
+    )
+    let viewController = WordFrequenciesListViewController(viewModel: viewModel)
     self.window?.rootViewController = viewController
     
     self.window?.makeKeyAndVisible()

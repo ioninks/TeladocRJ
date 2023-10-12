@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B52AAC8C2AD559D700BE3FDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */; };
-		B52AAC902AD559D700BE3FDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8F2AD559D700BE3FDE /* ViewController.swift */; };
+		B52AAC902AD559D700BE3FDE /* WordFrequenciesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8F2AD559D700BE3FDE /* WordFrequenciesListViewController.swift */; };
 		B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC942AD559D800BE3FDE /* Assets.xcassets */; };
 		B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */; };
 		B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */; };
+		B5D6E5DD2AD5928C0039495F /* Romeo-and-Juliet.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */; };
+		B5D6E5DF2AD6D1BA0039495F /* WordsCounterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */; };
+		B5D6E5E12AD6DA700039495F /* FileReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5E02AD6DA700039495F /* FileReaderService.swift */; };
+		B5D6E5E32AD6DBB60039495F /* WordFrequenciesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5E22AD6DBB60039495F /* WordFrequenciesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +38,17 @@
 /* Begin PBXFileReference section */
 		B52AAC882AD559D700BE3FDE /* TeladocRJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeladocRJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52AAC8B2AD559D700BE3FDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B52AAC8F2AD559D700BE3FDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B52AAC8F2AD559D700BE3FDE /* WordFrequenciesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesListViewController.swift; sourceTree = "<group>"; };
 		B52AAC942AD559D800BE3FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52AAC972AD559D800BE3FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52AAC992AD559D800BE3FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJTests.swift; sourceTree = "<group>"; };
 		B52AACA82AD559D800BE3FDE /* TeladocRJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Romeo-and-Juliet.txt"; sourceTree = "<group>"; };
+		B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterService.swift; sourceTree = "<group>"; };
+		B5D6E5E02AD6DA700039495F /* FileReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderService.swift; sourceTree = "<group>"; };
+		B5D6E5E22AD6DBB60039495F /* WordFrequenciesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			children = (
 				B52AAC942AD559D800BE3FDE /* Assets.xcassets */,
 				B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */,
+				B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -143,7 +152,8 @@
 		B5D6E5DA2AD586A50039495F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B52AAC8F2AD559D700BE3FDE /* ViewController.swift */,
+				B52AAC8F2AD559D700BE3FDE /* WordFrequenciesListViewController.swift */,
+				B5D6E5E22AD6DBB60039495F /* WordFrequenciesListViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 		B5D6E5DB2AD586AF0039495F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */,
+				B5D6E5E02AD6DA700039495F /* FileReaderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -259,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D6E5DD2AD5928C0039495F /* Romeo-and-Juliet.txt in Resources */,
 				B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */,
 				B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */,
 			);
@@ -285,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52AAC902AD559D700BE3FDE /* ViewController.swift in Sources */,
+				B5D6E5E32AD6DBB60039495F /* WordFrequenciesListViewModel.swift in Sources */,
+				B52AAC902AD559D700BE3FDE /* WordFrequenciesListViewController.swift in Sources */,
+				B5D6E5DF2AD6D1BA0039495F /* WordsCounterService.swift in Sources */,
+				B5D6E5E12AD6DA700039495F /* FileReaderService.swift in Sources */,
 				B52AAC8C2AD559D700BE3FDE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
