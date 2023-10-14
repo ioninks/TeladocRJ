@@ -56,6 +56,7 @@ private extension WordFrequenciesListViewController {
     let output = viewModel.bind(input: .init())
     
     output.cellConfigurations
+      .receive(on: DispatchQueue.main)
       .sink { [tableViewDataSource] configurations in
         var snapshot = NSDiffableDataSourceSnapshot<Int, WordFrequenciesCellConfiguration>()
         snapshot.appendSections([0])

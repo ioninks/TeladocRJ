@@ -16,16 +16,19 @@ protocol FileReaderServiceProtocol {
 final class FileReaderService: FileReaderServiceProtocol {
   
   func readLinesFromFile(fileURL: URL) -> AnyPublisher<String, Error> {
-    var text: String?
-    do {
-      text = try String(contentsOf: fileURL, encoding: .ascii)
-    } catch {
-      print("File error: \(error)")
-      return Fail(error: error).eraseToAnyPublisher()
+    return Deferred {
+      Future { promise in
+        Task {
+          do {
+            let text = try String(contentsOf: fileURL, encoding: .ascii)
+            promise(.success(text))
+          } catch {
+            promise(.failure(error))
+          }
+        }
+      }
     }
-    return Just(text ?? "")
-      .setFailureType(to: Error.self)
-      .eraseToAnyPublisher()
+    .eraseToAnyPublisher()
   }
   
 }
