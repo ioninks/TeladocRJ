@@ -48,7 +48,10 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
   // MARK: WordFrequenciesListViewModelProtocol
   
   func bind(input: WordFrequenciesListViewModelInput) -> WordFrequenciesListViewModelOutput {
-    let lines = dependencies.fileReaderService.readLinesFromFile(fileURL: fileURL)
+    let lines: AnyPublisher<String, Never> = dependencies.fileReaderService.readLinesFromFile(fileURL: fileURL)
+      .replaceError(with: "")
+      .eraseToAnyPublisher()
+    
     let countsDictionary = dependencies.wordsCounterService.countInteractivelyIn(lines: lines)
       .last()
     

@@ -12,6 +12,11 @@
 		B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC942AD559D800BE3FDE /* Assets.xcassets */; };
 		B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */; };
 		B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */; };
+		B5973F5C2AD848E500854732 /* WordsCounterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */; };
+		B5973F5E2AD8595900854732 /* WordFrequenciesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F5D2AD8595900854732 /* WordFrequenciesListViewModelTests.swift */; };
+		B5973F612AD8599A00854732 /* FileReaderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */; };
+		B5973F632AD85A0F00854732 /* WordsCounterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */; };
+		B5A810752AD8359E003ABC8F /* FileReaderServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */; };
 		B5D6E5DD2AD5928C0039495F /* Romeo-and-Juliet.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */; };
 		B5D6E5DF2AD6D1BA0039495F /* WordsCounterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */; };
 		B5D6E5E12AD6DA700039495F /* FileReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5E02AD6DA700039495F /* FileReaderService.swift */; };
@@ -20,13 +25,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		B52AAC9F2AD559D800BE3FDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B52AAC802AD559D700BE3FDE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B52AAC872AD559D700BE3FDE;
-			remoteInfo = TeladocRJ;
-		};
-		B52AACA92AD559D800BE3FDE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B52AAC802AD559D700BE3FDE /* Project object */;
 			proxyType = 1;
@@ -44,7 +42,11 @@
 		B52AAC992AD559D800BE3FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJTests.swift; sourceTree = "<group>"; };
-		B52AACA82AD559D800BE3FDE /* TeladocRJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterServiceTests.swift; sourceTree = "<group>"; };
+		B5973F5D2AD8595900854732 /* WordFrequenciesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesListViewModelTests.swift; sourceTree = "<group>"; };
+		B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderServiceMock.swift; sourceTree = "<group>"; };
+		B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterServiceMock.swift; sourceTree = "<group>"; };
+		B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderServiceTests.swift; sourceTree = "<group>"; };
 		B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Romeo-and-Juliet.txt"; sourceTree = "<group>"; };
 		B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterService.swift; sourceTree = "<group>"; };
 		B5D6E5E02AD6DA700039495F /* FileReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderService.swift; sourceTree = "<group>"; };
@@ -60,13 +62,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B52AAC9B2AD559D800BE3FDE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B52AACA52AD559D800BE3FDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,7 +85,6 @@
 			children = (
 				B52AAC882AD559D700BE3FDE /* TeladocRJ.app */,
 				B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */,
-				B52AACA82AD559D800BE3FDE /* TeladocRJUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,8 +103,61 @@
 			isa = PBXGroup;
 			children = (
 				B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */,
+				B5A8106F2AD834E2003ABC8F /* Mocks */,
+				B5A8106E2AD834DB003ABC8F /* Tests */,
 			);
 			path = TeladocRJTests;
+			sourceTree = "<group>";
+		};
+		B5A8106E2AD834DB003ABC8F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B5A810732AD8350F003ABC8F /* Presentation */,
+				B5A810722AD8350A003ABC8F /* Services */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B5A8106F2AD834E2003ABC8F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A810702AD834F6003ABC8F /* Presentation */,
+				B5A810712AD834FD003ABC8F /* Services */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B5A810702AD834F6003ABC8F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B5A810712AD834FD003ABC8F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */,
+				B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5A810722AD8350A003ABC8F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */,
+				B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5A810732AD8350F003ABC8F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B5973F5D2AD8595900854732 /* WordFrequenciesListViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		B5D6E5D62AD586230039495F /* Classes */ = {
@@ -205,24 +252,6 @@
 			productReference = B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B52AACA72AD559D800BE3FDE /* TeladocRJUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B52AACB82AD559D800BE3FDE /* Build configuration list for PBXNativeTarget "TeladocRJUITests" */;
-			buildPhases = (
-				B52AACA42AD559D800BE3FDE /* Sources */,
-				B52AACA52AD559D800BE3FDE /* Frameworks */,
-				B52AACA62AD559D800BE3FDE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B52AACAA2AD559D800BE3FDE /* PBXTargetDependency */,
-			);
-			name = TeladocRJUITests;
-			productName = TeladocRJUITests;
-			productReference = B52AACA82AD559D800BE3FDE /* TeladocRJUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,10 +266,6 @@
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					B52AAC9D2AD559D800BE3FDE = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = B52AAC872AD559D700BE3FDE;
-					};
-					B52AACA72AD559D800BE3FDE = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = B52AAC872AD559D700BE3FDE;
 					};
@@ -261,7 +286,6 @@
 			targets = (
 				B52AAC872AD559D700BE3FDE /* TeladocRJ */,
 				B52AAC9D2AD559D800BE3FDE /* TeladocRJTests */,
-				B52AACA72AD559D800BE3FDE /* TeladocRJUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,13 +302,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B52AAC9C2AD559D800BE3FDE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B52AACA62AD559D800BE3FDE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,14 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5973F632AD85A0F00854732 /* WordsCounterServiceMock.swift in Sources */,
+				B5973F5C2AD848E500854732 /* WordsCounterServiceTests.swift in Sources */,
+				B5973F612AD8599A00854732 /* FileReaderServiceMock.swift in Sources */,
+				B5A810752AD8359E003ABC8F /* FileReaderServiceTests.swift in Sources */,
 				B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B52AACA42AD559D800BE3FDE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B5973F5E2AD8595900854732 /* WordFrequenciesListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,11 +343,6 @@
 			isa = PBXTargetDependency;
 			target = B52AAC872AD559D700BE3FDE /* TeladocRJ */;
 			targetProxy = B52AAC9F2AD559D800BE3FDE /* PBXContainerItemProxy */;
-		};
-		B52AACAA2AD559D800BE3FDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B52AAC872AD559D700BE3FDE /* TeladocRJ */;
-			targetProxy = B52AACA92AD559D800BE3FDE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,7 +535,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J246HBQE3Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstantin.ionin.TeladocRJTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,7 +555,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J246HBQE3Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.konstantin.ionin.TeladocRJTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,42 +563,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeladocRJ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TeladocRJ";
-			};
-			name = Release;
-		};
-		B52AACB92AD559D800BE3FDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J246HBQE3Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.konstantin.ionin.TeladocRJUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TeladocRJ;
-			};
-			name = Debug;
-		};
-		B52AACBA2AD559D800BE3FDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J246HBQE3Y;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.konstantin.ionin.TeladocRJUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TeladocRJ;
 			};
 			name = Release;
 		};
@@ -618,15 +592,6 @@
 			buildConfigurations = (
 				B52AACB62AD559D800BE3FDE /* Debug */,
 				B52AACB72AD559D800BE3FDE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B52AACB82AD559D800BE3FDE /* Build configuration list for PBXNativeTarget "TeladocRJUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B52AACB92AD559D800BE3FDE /* Debug */,
-				B52AACBA2AD559D800BE3FDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
