@@ -10,6 +10,9 @@ import UIKit
 
 private enum Constants {
   static let cellIdentifier = "WordFrequenciesCell"
+  static let mediumSpacing: CGFloat = 16
+  static let smallSpacing: CGFloat = 12
+  static let cornerRadius: CGFloat = 16
 }
 
 class WordFrequenciesListViewController: UIViewController {
@@ -17,9 +20,17 @@ class WordFrequenciesListViewController: UIViewController {
   // MARK: UI
   
   private let tableView = UITableView()
+  private let controlsContainer = UIView()
+  private let sortControlLabel = UILabel()
+  private let sortSelector = UISegmentedControl()
+  
+  // MARK: Private Properties
+  
   private var tableViewDataSource: UITableViewDiffableDataSource<Int, WordFrequenciesCellConfiguration>?
   
   private let viewModel: WordFrequenciesListViewModelProtocol
+  
+  private let didSelectSortControlItemAtIndexSubject = PassthroughSubject<Int, Never>()
   
   private var disposeBag = Set<AnyCancellable>()
   
@@ -43,40 +54,17 @@ class WordFrequenciesListViewController: UIViewController {
     setHierarchy()
     setUI()
     setLayout()
+    setDataSource()
     setBindings()
   }
   
 }
 
-// MARK: - Bindings
+// MARK: - Data Source
 
 private extension WordFrequenciesListViewController {
   
-  private func setBindings() {
-    let output = viewModel.bind(input: .init())
-    
-    output.cellConfigurations
-      .receive(on: DispatchQueue.main)
-      .sink { [tableViewDataSource] configurations in
-        var snapshot = NSDiffableDataSourceSnapshot<Int, WordFrequenciesCellConfiguration>()
-        snapshot.appendSections([0])
-        snapshot.appendItems(configurations)
-        tableViewDataSource?.apply(snapshot)
-      }
-      .store(in: &disposeBag)
-  }
-  
-}
-
-// MARK: Views Setup
-
-private extension WordFrequenciesListViewController {
-  
-  func setHierarchy() {
-    view.addSubview(tableView)
-  }
-  
-  func setUI() {
+  func setDataSource() {
     tableViewDataSource = .init(tableView: tableView, cellProvider: { tableView, _, configuration in
       let cell: UITableViewCell
       if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) {
@@ -90,8 +78,78 @@ private extension WordFrequenciesListViewController {
       content.secondaryText = configuration.value
       
       cell.contentConfiguration = content
+      cell.backgroundColor = .secondarySystemBackground
       return cell
     })
+  }
+  
+}
+
+// MARK: - Bindings
+
+private extension WordFrequenciesListViewController {
+  
+  func setBindings() {
+    let output = viewModel.bind(
+      input: .init(
+        didSelectSortControlItemAtIndex: didSelectSortControlItemAtIndexSubject.eraseToAnyPublisher()
+      )
+    )
+    
+    output.cellConfigurations
+      .receive(on: DispatchQueue.main)
+      .sink { [tableViewDataSource] configurations in
+        var snapshot = NSDiffableDataSourceSnapshot<Int, WordFrequenciesCellConfiguration>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(configurations)
+        tableViewDataSource?.apply(snapshot)
+      }
+      .store(in: &disposeBag)
+    
+    output.sortControlTitles
+      .receive(on: DispatchQueue.main)
+      .sink { [sortSelector, didSelectSortControlItemAtIndexSubject] titles in
+        sortSelector.removeAllSegments()
+        for (index, title) in titles.enumerated().reversed() {
+          let action = UIAction(
+            title: title,
+            handler: { _ in
+              didSelectSortControlItemAtIndexSubject.send(index)
+            }
+          )
+          sortSelector.insertSegment(action: action, at: 0, animated: false)
+        }
+        sortSelector.selectedSegmentIndex = 0
+      }
+      .store(in: &disposeBag)
+  }
+  
+}
+
+// MARK: Views Setup
+
+private extension WordFrequenciesListViewController {
+  
+  func setHierarchy() {
+    view.addSubview(tableView)
+    view.addSubview(controlsContainer)
+    
+    controlsContainer.addSubview(sortControlLabel)
+    controlsContainer.addSubview(sortSelector)
+  }
+  
+  func setUI() {
+    view.backgroundColor = .secondarySystemBackground
+    
+    tableView.backgroundColor = .secondarySystemBackground
+    tableView.allowsSelection = false
+    
+    controlsContainer.backgroundColor = .systemBackground
+    controlsContainer.layer.cornerRadius = Constants.cornerRadius
+    controlsContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    
+    sortControlLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+    sortControlLabel.text = "Sorting"
   }
   
   func setLayout() {
@@ -100,8 +158,32 @@ private extension WordFrequenciesListViewController {
       tableView.topAnchor.constraint(equalTo: view.topAnchor),
       tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
+    
+    controlsContainer.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      controlsContainer.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+      controlsContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      controlsContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      controlsContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+    ])
+    
+    sortControlLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      sortControlLabel.topAnchor.constraint(equalTo: controlsContainer.topAnchor, constant: Constants.mediumSpacing),
+      sortControlLabel.leadingAnchor.constraint(equalTo: controlsContainer.leadingAnchor, constant: Constants.mediumSpacing),
+      sortControlLabel.trailingAnchor.constraint(equalTo: controlsContainer.trailingAnchor, constant: -Constants.mediumSpacing)
+    ])
+    
+    sortSelector.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      sortSelector.topAnchor.constraint(equalTo: sortControlLabel.bottomAnchor, constant: Constants.smallSpacing),
+      sortSelector.leadingAnchor.constraint(equalTo: controlsContainer.leadingAnchor, constant: Constants.mediumSpacing),
+      sortSelector.trailingAnchor.constraint(equalTo: controlsContainer.trailingAnchor, constant: -Constants.mediumSpacing),
+      sortSelector.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.mediumSpacing)
+    ])
+    
+    
   }
   
 }

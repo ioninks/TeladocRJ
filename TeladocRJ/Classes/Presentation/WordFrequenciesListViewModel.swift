@@ -18,12 +18,27 @@ private struct WordFrequenciesItem {
   let count: Int
 }
 
-struct WordFrequenciesListViewModelInput {
+enum WordsSortingMethod: CaseIterable {
+  case byFrequency
+  case alphabetically
+  case byLength
   
+  var title: String {
+    switch self {
+    case .byFrequency: return "By Frequency"
+    case .alphabetically: return "Alphabetically"
+    case .byLength: return "By Length"
+    }
+  }
+}
+
+struct WordFrequenciesListViewModelInput {
+  let didSelectSortControlItemAtIndex: AnyPublisher<Int, Never>
 }
 
 struct WordFrequenciesListViewModelOutput {
   let cellConfigurations: AnyPublisher<[WordFrequenciesCellConfiguration], Never>
+  let sortControlTitles: AnyPublisher<[String], Never>
 }
 
 protocol WordFrequenciesListViewModelProtocol {
@@ -62,9 +77,21 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
         }
       }
     
+    let selectedSortingMethod = input.didSelectSortControlItemAtIndex
+      .map { index in WordsSortingMethod.allCases[index] }
+      .prepend(WordsSortingMethod.allCases[0])
+    
     let sortedItems = items
-      .map { list in
-        list.sorted(by: { $0.count > $1.count })
+      .combineLatest(selectedSortingMethod)
+      .map { list, sortingMethod in
+        switch sortingMethod {
+        case .byFrequency:
+          return list.sorted(by: { $0.count > $1.count })
+        case .alphabetically:
+          return list.sorted(by: { $0.word < $1.word })
+        case .byLength:
+          return list.sorted(by: { $0.word.count > $1.word.count })
+        }
       }
     
     let configurations = sortedItems
@@ -72,7 +99,13 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
         list.map(\.asCellConfiguration)
       }
     
-    return .init(cellConfigurations: configurations.eraseToAnyPublisher())
+    let sortControlTitles = WordsSortingMethod.allCases
+      .map(\.title)
+    
+    return .init(
+      cellConfigurations: configurations.eraseToAnyPublisher(),
+      sortControlTitles: Just(sortControlTitles).eraseToAnyPublisher()
+    )
   }
   
 }

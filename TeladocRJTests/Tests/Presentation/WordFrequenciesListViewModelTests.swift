@@ -31,7 +31,10 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
   // cancellables
   private var cellConfigurationsCancellable: AnyCancellable!
   
-  // accumulators
+  // input subjects
+  private var didSelectSortControlItemAtIndexSubject: PassthroughSubject<Int, Never>!
+  
+  // output accumulators
   private var cellConfigurationsAccumulator: [[WordFrequenciesCellConfiguration]]!
     
   override func tearDown() {
@@ -39,7 +42,9 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     fileReaderServiceMock = nil
     wordsCounterServiceMock = nil
     cellConfigurationsCancellable = nil
+    didSelectSortControlItemAtIndexSubject = nil
     cellConfigurationsAccumulator = nil
+    
     super.tearDown()
   }
   
@@ -65,13 +70,39 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(completion: .finished)
     
     // then
-    let expectedConfigurations: [WordFrequenciesCellConfiguration] = [
+    let configurationsSortedByWordFrequencies: [WordFrequenciesCellConfiguration] = [
       .init(title: "Yes", value: "2"),
       .init(title: "No", value: "1")
     ]
     XCTAssertEqual(
-      cellConfigurationsAccumulator, [expectedConfigurations],
-      "should return configurations sorted by counts"
+      cellConfigurationsAccumulator, [configurationsSortedByWordFrequencies],
+      "should return configurations for words sorted by frequencies"
+    )
+    
+    // when
+    didSelectSortControlItemAtIndexSubject.send(1)
+    
+    // then
+    let configurationsSortedByWordsAlphabetically: [WordFrequenciesCellConfiguration] = [
+      .init(title: "No", value: "1"),
+      .init(title: "Yes", value: "2")
+    ]
+    XCTAssertEqual(
+      cellConfigurationsAccumulator.last, configurationsSortedByWordsAlphabetically,
+      "should return configurations for words sorted alphabetically"
+    )
+    
+    // when
+    didSelectSortControlItemAtIndexSubject.send(2)
+    
+    // then
+    let configurationsSortedByWordLength: [WordFrequenciesCellConfiguration] = [
+      .init(title: "Yes", value: "2"),
+      .init(title: "No", value: "1")
+    ]
+    XCTAssertEqual(
+      cellConfigurationsAccumulator.last, configurationsSortedByWordLength,
+      "should return configurations for words sorted by length"
     )
   }
   
@@ -91,9 +122,14 @@ private extension WordFrequenciesListViewModelTests {
       )
     )
     
+    didSelectSortControlItemAtIndexSubject = .init()
     cellConfigurationsAccumulator = []
     
-    let output = viewModel.bind(input: .init())
+    let output = viewModel.bind(
+      input: .init(
+        didSelectSortControlItemAtIndex: didSelectSortControlItemAtIndexSubject.eraseToAnyPublisher()
+      )
+    )
     
     cellConfigurationsCancellable = output.cellConfigurations
       .sink(receiveValue: { configurations in
