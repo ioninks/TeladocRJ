@@ -11,7 +11,6 @@
 		B52AAC902AD559D700BE3FDE /* WordFrequenciesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AAC8F2AD559D700BE3FDE /* WordFrequenciesListViewController.swift */; };
 		B52AAC952AD559D800BE3FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC942AD559D800BE3FDE /* Assets.xcassets */; };
 		B52AAC982AD559D800BE3FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52AAC962AD559D800BE3FDE /* LaunchScreen.storyboard */; };
-		B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */; };
 		B5973F5C2AD848E500854732 /* WordsCounterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */; };
 		B5973F5E2AD8595900854732 /* WordFrequenciesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F5D2AD8595900854732 /* WordFrequenciesListViewModelTests.swift */; };
 		B5973F612AD8599A00854732 /* FileReaderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */; };
@@ -20,8 +19,8 @@
 		B5BD6F1D2ADD4BBC0002C5D4 /* WordsSortingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F1C2ADD4BBC0002C5D4 /* WordsSortingService.swift */; };
 		B5BD6F1F2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F1E2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift */; };
 		B5BD6F212ADD4BF90002C5D4 /* WordsSortingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F202ADD4BF90002C5D4 /* WordsSortingMethod.swift */; };
-		B5BD6F232ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F222ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift */; };
-		B5BD6F252ADD5ACB0002C5D4 /* AsyncWordsSortingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F242ADD5ACB0002C5D4 /* AsyncWordsSortingServiceTests.swift */; };
+		B5BD6F232ADD50A90002C5D4 /* WordsSortingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F222ADD50A90002C5D4 /* WordsSortingServiceMock.swift */; };
+		B5BD6F252ADD5ACB0002C5D4 /* WordsSortingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F242ADD5ACB0002C5D4 /* WordsSortingServiceTests.swift */; };
 		B5D6E5DD2AD5928C0039495F /* Romeo-and-Juliet.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */; };
 		B5D6E5DF2AD6D1BA0039495F /* WordsCounterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */; };
 		B5D6E5E12AD6DA700039495F /* FileReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D6E5E02AD6DA700039495F /* FileReaderService.swift */; };
@@ -46,7 +45,6 @@
 		B52AAC972AD559D800BE3FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52AAC992AD559D800BE3FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52AAC9E2AD559D800BE3FDE /* TeladocRJTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeladocRJTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladocRJTests.swift; sourceTree = "<group>"; };
 		B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterServiceTests.swift; sourceTree = "<group>"; };
 		B5973F5D2AD8595900854732 /* WordFrequenciesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesListViewModelTests.swift; sourceTree = "<group>"; };
 		B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderServiceMock.swift; sourceTree = "<group>"; };
@@ -55,8 +53,8 @@
 		B5BD6F1C2ADD4BBC0002C5D4 /* WordsSortingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingService.swift; sourceTree = "<group>"; };
 		B5BD6F1E2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesItem.swift; sourceTree = "<group>"; };
 		B5BD6F202ADD4BF90002C5D4 /* WordsSortingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingMethod.swift; sourceTree = "<group>"; };
-		B5BD6F222ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWordsSortingServiceMock.swift; sourceTree = "<group>"; };
-		B5BD6F242ADD5ACB0002C5D4 /* AsyncWordsSortingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWordsSortingServiceTests.swift; sourceTree = "<group>"; };
+		B5BD6F222ADD50A90002C5D4 /* WordsSortingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingServiceMock.swift; sourceTree = "<group>"; };
+		B5BD6F242ADD5ACB0002C5D4 /* WordsSortingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingServiceTests.swift; sourceTree = "<group>"; };
 		B5D6E5DC2AD5928C0039495F /* Romeo-and-Juliet.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Romeo-and-Juliet.txt"; sourceTree = "<group>"; };
 		B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterService.swift; sourceTree = "<group>"; };
 		B5D6E5E02AD6DA700039495F /* FileReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderService.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		B52AACA12AD559D800BE3FDE /* TeladocRJTests */ = {
 			isa = PBXGroup;
 			children = (
-				B52AACA22AD559D800BE3FDE /* TeladocRJTests.swift */,
 				B5A8106F2AD834E2003ABC8F /* Mocks */,
 				B5A8106E2AD834DB003ABC8F /* Tests */,
 			);
@@ -149,7 +146,7 @@
 			children = (
 				B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */,
 				B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */,
-				B5BD6F222ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift */,
+				B5BD6F222ADD50A90002C5D4 /* WordsSortingServiceMock.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -159,7 +156,7 @@
 			children = (
 				B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */,
 				B5973F5B2AD848E500854732 /* WordsCounterServiceTests.swift */,
-				B5BD6F242ADD5ACB0002C5D4 /* AsyncWordsSortingServiceTests.swift */,
+				B5BD6F242ADD5ACB0002C5D4 /* WordsSortingServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -356,10 +353,9 @@
 				B5973F632AD85A0F00854732 /* WordsCounterServiceMock.swift in Sources */,
 				B5973F5C2AD848E500854732 /* WordsCounterServiceTests.swift in Sources */,
 				B5973F612AD8599A00854732 /* FileReaderServiceMock.swift in Sources */,
-				B5BD6F232ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift in Sources */,
+				B5BD6F232ADD50A90002C5D4 /* WordsSortingServiceMock.swift in Sources */,
 				B5A810752AD8359E003ABC8F /* FileReaderServiceTests.swift in Sources */,
-				B5BD6F252ADD5ACB0002C5D4 /* AsyncWordsSortingServiceTests.swift in Sources */,
-				B52AACA32AD559D800BE3FDE /* TeladocRJTests.swift in Sources */,
+				B5BD6F252ADD5ACB0002C5D4 /* WordsSortingServiceTests.swift in Sources */,
 				B5973F5E2AD8595900854732 /* WordFrequenciesListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

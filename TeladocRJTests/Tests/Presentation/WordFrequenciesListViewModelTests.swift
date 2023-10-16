@@ -55,7 +55,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     // given
     setUpViewModel(fileURL: Constants.fileURL)
     
-    // when
+    // when read the file
     fileReaderServiceMock.stubbedReadLinesFromFileResult.send(Constants.text)
     
     // then
@@ -64,14 +64,14 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       "expected wordsCounterService to be invoked once"
     )
     
-    // when
+    // when calculated word frequencies
     let counts: [String: Int] = [
       "No": 1,
       "Yes": 2
     ]
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(counts)
     
-    // when
+    // when received sorted items
     let sortedWords: [WordFrequenciesItem] = [
       .init(word: "Yes", count: 2),
       .init(word: "No", count: 1)
@@ -93,7 +93,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     // given
     setUpViewModel(fileURL: Constants.fileURL)
     
-    // when
+    // when read the file
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(Constants.counts)
     
     // then
@@ -106,7 +106,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       "should sort words by frequency"
     )
     
-    // when
+    // when selected alphabetical sorting
     didSelectSortControlItemAtIndexSubject.send(1)
     
     // then
@@ -119,8 +119,8 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       "should sort words alphabetically"
     )
     
-    // when
-    didSelectSortControlItemAtIndexSubject.send(1)
+    // when selected sorting by length
+    didSelectSortControlItemAtIndexSubject.send(2)
     
     // then
     XCTAssertEqual(
@@ -128,7 +128,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       "should sort words the third time"
     )
     XCTAssertEqual(
-      wordsSortingServiceMock.invokedSortMethod, .alphabetically,
+      wordsSortingServiceMock.invokedSortMethod, .byLength,
       "should sort words by length"
     )
   }

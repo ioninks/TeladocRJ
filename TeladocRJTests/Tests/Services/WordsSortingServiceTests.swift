@@ -15,6 +15,7 @@ final class WordsSortingServiceTests: XCTestCase {
   // system under test
   private var service: WordsSortingService!
   
+  // cancellables
   private var resultCancellable: AnyCancellable!
   
   override func setUp() {
@@ -33,7 +34,7 @@ final class WordsSortingServiceTests: XCTestCase {
   // MARK: Tests
   
   func test_whenSortingByFreqency_shouldReturnProperResult() {
-    // when
+    // when sorting two items by freqency
     let items: [WordFrequenciesItem] = [
       .init(word: "No", count: 1),
       .init(word: "Yes", count: 2)
@@ -52,11 +53,11 @@ final class WordsSortingServiceTests: XCTestCase {
       .init(word: "No", count: 1)
     ]
     wait(for: [expectation], timeout: 1.0)
-    XCTAssertEqual(result, expectedItems)
+    XCTAssertEqual(result, expectedItems, "expected items sorted by frequency in descending order")
   }
   
   func test_whenSortingAlphabetically_shouldReturnProperResult() {
-    // when
+    // when sorting two items alphabetically
     let items: [WordFrequenciesItem] = [
       .init(word: "Yes", count: 2),
       .init(word: "No", count: 1)
@@ -75,11 +76,11 @@ final class WordsSortingServiceTests: XCTestCase {
       .init(word: "Yes", count: 2)
     ]
     wait(for: [expectation], timeout: 1.0)
-    XCTAssertEqual(result, expectedItems)
+    XCTAssertEqual(result, expectedItems, "expected items sorted alphabetically in ascending order")
   }
   
   func test_whenSortingByLength_shouldReturnProperResult() {
-    // when
+    // when sorting two items by length
     let items: [WordFrequenciesItem] = [
       .init(word: "Yes", count: 2),
       .init(word: "No", count: 1),
@@ -98,7 +99,7 @@ final class WordsSortingServiceTests: XCTestCase {
       .init(word: "Yes", count: 2)
     ]
     wait(for: [expectation], timeout: 1.0)
-    XCTAssertEqual(result, expectedItems)
+    XCTAssertEqual(result, expectedItems, "expected items sorted by length in ascending order")
   }
   
 }

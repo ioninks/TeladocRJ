@@ -34,7 +34,7 @@ final class FileReaderServiceTests: XCTestCase {
     let fileURL = URL(string: "/none")!
     let expectation = XCTestExpectation()
     
-    // when
+    // when read the file with invalid URL
     var result: String?
     var error: Error?
     readLinesCancellable = service.readLinesFromFile(fileURL: fileURL)

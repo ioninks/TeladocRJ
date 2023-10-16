@@ -33,7 +33,7 @@ final class WordsCounterServiceTests: XCTestCase {
     Quarrel, sir? No, sir.
     """
     
-    // when
+    // when sent two lines of text as one emitted input value
     var result: [String: Int] = [:]
     _ = service.countWordFrequenciesIn(lines: Just(text).eraseToAnyPublisher())
       .sink(receiveValue: { result = $0 })
@@ -46,7 +46,7 @@ final class WordsCounterServiceTests: XCTestCase {
       "Sir": 3,
       "No": 1
     ]
-    XCTAssertEqual(result, expectedResult)
+    XCTAssertEqual(result, expectedResult, "expected a correct result")
   }
   
   func test_whenEmittingTwoLinesSeparately_producesCorrectFinalResult() {
@@ -54,6 +54,7 @@ final class WordsCounterServiceTests: XCTestCase {
     let line1 = "Do you quarrel, sir?"
     let line2 = "Quarrel, sir? No, sir."
     
+    // when sent two lines of text as two separate emitted input values
     var result: [String: Int] = [:]
     _ = service.countWordFrequenciesIn(lines: Just(line1).append(line2).eraseToAnyPublisher())
       .sink(receiveValue: { result = $0 })
