@@ -1,5 +1,5 @@
 //
-//  AsyncWordsSortingServiceMock.swift
+//  WordsSortingServiceMock.swift
 //  TeladocRJTests
 //
 //  Created by Konstantin Ionin on 16.10.2023.
@@ -10,7 +10,7 @@ import Foundation
 
 @testable import TeladocRJ
 
-final class AsyncWordsSortingServiceMock: AsyncWordsSortingServiceProtocol {
+final class WordsSortingServiceMock: WordsSortingServiceProtocol {
   
   private(set) var invokedSortCount = 0
   private(set) var invokedSortMethod: WordsSortingMethod?

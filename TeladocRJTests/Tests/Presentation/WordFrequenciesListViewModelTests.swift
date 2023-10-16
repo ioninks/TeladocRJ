@@ -27,7 +27,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
   // mocks
   private var fileReaderServiceMock: FileReaderServiceMock!
   private var wordsCounterServiceMock: WordsCounterServiceMock!
-  private var wordsSortingServiceMock: AsyncWordsSortingServiceMock!
+  private var wordsSortingServiceMock: WordsSortingServiceMock!
   
   // cancellables
   private var cellConfigurationsCancellable: AnyCancellable!

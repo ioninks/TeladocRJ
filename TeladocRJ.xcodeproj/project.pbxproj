@@ -17,7 +17,7 @@
 		B5973F612AD8599A00854732 /* FileReaderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */; };
 		B5973F632AD85A0F00854732 /* WordsCounterServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */; };
 		B5A810752AD8359E003ABC8F /* FileReaderServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */; };
-		B5BD6F1D2ADD4BBC0002C5D4 /* AsyncWordsSortingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F1C2ADD4BBC0002C5D4 /* AsyncWordsSortingService.swift */; };
+		B5BD6F1D2ADD4BBC0002C5D4 /* WordsSortingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F1C2ADD4BBC0002C5D4 /* WordsSortingService.swift */; };
 		B5BD6F1F2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F1E2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift */; };
 		B5BD6F212ADD4BF90002C5D4 /* WordsSortingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F202ADD4BF90002C5D4 /* WordsSortingMethod.swift */; };
 		B5BD6F232ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BD6F222ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift */; };
@@ -52,7 +52,7 @@
 		B5973F602AD8599A00854732 /* FileReaderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderServiceMock.swift; sourceTree = "<group>"; };
 		B5973F622AD85A0F00854732 /* WordsCounterServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsCounterServiceMock.swift; sourceTree = "<group>"; };
 		B5A810742AD8359E003ABC8F /* FileReaderServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderServiceTests.swift; sourceTree = "<group>"; };
-		B5BD6F1C2ADD4BBC0002C5D4 /* AsyncWordsSortingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWordsSortingService.swift; sourceTree = "<group>"; };
+		B5BD6F1C2ADD4BBC0002C5D4 /* WordsSortingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingService.swift; sourceTree = "<group>"; };
 		B5BD6F1E2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFrequenciesItem.swift; sourceTree = "<group>"; };
 		B5BD6F202ADD4BF90002C5D4 /* WordsSortingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsSortingMethod.swift; sourceTree = "<group>"; };
 		B5BD6F222ADD50A90002C5D4 /* AsyncWordsSortingServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncWordsSortingServiceMock.swift; sourceTree = "<group>"; };
@@ -172,14 +172,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		B5BD6F1B2ADD4B9F0002C5D4 /* AsyncWordsSortingService */ = {
+		B5BD6F1B2ADD4B9F0002C5D4 /* WordsSortingService */ = {
 			isa = PBXGroup;
 			children = (
-				B5BD6F1C2ADD4BBC0002C5D4 /* AsyncWordsSortingService.swift */,
+				B5BD6F1C2ADD4BBC0002C5D4 /* WordsSortingService.swift */,
 				B5BD6F1E2ADD4BDB0002C5D4 /* WordFrequenciesItem.swift */,
 				B5BD6F202ADD4BF90002C5D4 /* WordsSortingMethod.swift */,
 			);
-			path = AsyncWordsSortingService;
+			path = WordsSortingService;
 			sourceTree = "<group>";
 		};
 		B5D6E5D62AD586230039495F /* Classes */ = {
@@ -232,7 +232,7 @@
 			children = (
 				B5D6E5DE2AD6D1BA0039495F /* WordsCounterService.swift */,
 				B5D6E5E02AD6DA700039495F /* FileReaderService.swift */,
-				B5BD6F1B2ADD4B9F0002C5D4 /* AsyncWordsSortingService */,
+				B5BD6F1B2ADD4B9F0002C5D4 /* WordsSortingService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				B5D6E5DF2AD6D1BA0039495F /* WordsCounterService.swift in Sources */,
 				B5D6E5E12AD6DA700039495F /* FileReaderService.swift in Sources */,
 				B52AAC8C2AD559D700BE3FDE /* AppDelegate.swift in Sources */,
-				B5BD6F1D2ADD4BBC0002C5D4 /* AsyncWordsSortingService.swift in Sources */,
+				B5BD6F1D2ADD4BBC0002C5D4 /* WordsSortingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

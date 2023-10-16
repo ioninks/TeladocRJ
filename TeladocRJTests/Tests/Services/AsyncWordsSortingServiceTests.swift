@@ -1,5 +1,5 @@
 //
-//  AsyncWordsSortingServiceTests.swift
+//  WordsSortingServiceTests.swift
 //  TeladocRJTests
 //
 //  Created by Konstantin Ionin on 16.10.2023.
@@ -10,10 +10,10 @@ import XCTest
 
 @testable import TeladocRJ
 
-final class AsyncWordsSortingServiceTests: XCTestCase {
+final class WordsSortingServiceTests: XCTestCase {
   
   // system under test
-  private var service: AsyncWordsSortingService!
+  private var service: WordsSortingService!
   
   private var resultCancellable: AnyCancellable!
   

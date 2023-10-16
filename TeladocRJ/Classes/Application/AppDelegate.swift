@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       dependencies: .init(
         fileReaderService: FileReaderService(),
         wordsCounterService: WordsCounterService(),
-        wordsSortingService: AsyncWordsSortingService()
+        wordsSortingService: WordsSortingService()
       )
     )
     let viewController = WordFrequenciesListViewController(viewModel: viewModel)

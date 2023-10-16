@@ -31,7 +31,7 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
   struct Dependencies {
     let fileReaderService: FileReaderServiceProtocol
     let wordsCounterService: WordsCounterServiceProtocol
-    let wordsSortingService: AsyncWordsSortingServiceProtocol
+    let wordsSortingService: WordsSortingServiceProtocol
   }
   
   private let fileURL: URL

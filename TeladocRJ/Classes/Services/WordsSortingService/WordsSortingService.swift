@@ -1,5 +1,5 @@
 //
-//  AsyncWordsSortingService.swift
+//  WordsSortingService.swift
 //  TeladocRJ
 //
 //  Created by Konstantin Ionin on 16.10.2023.
@@ -8,12 +8,12 @@
 import Combine
 import Foundation
 
-protocol AsyncWordsSortingServiceProtocol {
+protocol WordsSortingServiceProtocol {
   /// Sort items using provided method on a background thread and return the result using a publisher
   func sort(items: [WordFrequenciesItem], by method: WordsSortingMethod) -> AnyPublisher<[WordFrequenciesItem], Never>
 }
 
-final class AsyncWordsSortingService: AsyncWordsSortingServiceProtocol {
+final class WordsSortingService: WordsSortingServiceProtocol {
   
   func sort(items: [WordFrequenciesItem], by method: WordsSortingMethod) -> AnyPublisher<[WordFrequenciesItem], Never> {
     return Deferred {
