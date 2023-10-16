@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 protocol FileReaderServiceProtocol {
+  /// Read the file using `ascii` encoding on a background thread and return all the content as one `String` using a publisher
   func readLinesFromFile(fileURL: URL) -> AnyPublisher<String, Error>
 }
 

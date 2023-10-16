@@ -12,14 +12,14 @@ import Foundation
 
 final class WordsCounterServiceMock: WordsCounterServiceProtocol {
   
-  private(set) var invokedCountInteractivelyInCount = 0
+  private(set) var invokedCountWordFrequenciesInCount = 0
   
   let stubbedCountInteractivelyInResult = PassthroughSubject<[String: Int], Never>()
   
-  func countInteractivelyIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never> {
+  func countWordFrequenciesIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never> {
     return stubbedCountInteractivelyInResult
       .handleEvents(receiveSubscription: { _ in
-        self.invokedCountInteractivelyInCount += 1
+        self.invokedCountWordFrequenciesInCount += 1
       })
       .eraseToAnyPublisher()
   }

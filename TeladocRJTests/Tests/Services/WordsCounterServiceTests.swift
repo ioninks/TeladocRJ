@@ -35,7 +35,7 @@ final class WordsCounterServiceTests: XCTestCase {
     
     // when
     var result: [String: Int] = [:]
-    _ = service.countInteractivelyIn(lines: Just(text).eraseToAnyPublisher())
+    _ = service.countWordFrequenciesIn(lines: Just(text).eraseToAnyPublisher())
       .sink(receiveValue: { result = $0 })
     
     // then
@@ -55,7 +55,7 @@ final class WordsCounterServiceTests: XCTestCase {
     let line2 = "Quarrel, sir? No, sir."
     
     var result: [String: Int] = [:]
-    _ = service.countInteractivelyIn(lines: Just(line1).append(line2).eraseToAnyPublisher())
+    _ = service.countWordFrequenciesIn(lines: Just(line1).append(line2).eraseToAnyPublisher())
       .sink(receiveValue: { result = $0 })
     
     // then

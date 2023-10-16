@@ -60,7 +60,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     
     // then
     XCTAssertEqual(
-      wordsCounterServiceMock.invokedCountInteractivelyInCount, 1,
+      wordsCounterServiceMock.invokedCountWordFrequenciesInCount, 1,
       "expected wordsCounterService to be invoked once"
     )
     
@@ -70,7 +70,6 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       "Yes": 2
     ]
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(counts)
-    wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(completion: .finished)
     
     // when
     let sortedWords: [WordFrequenciesItem] = [
@@ -96,7 +95,6 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     
     // when
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(Constants.counts)
-    wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(completion: .finished)
     
     // then
     XCTAssertEqual(

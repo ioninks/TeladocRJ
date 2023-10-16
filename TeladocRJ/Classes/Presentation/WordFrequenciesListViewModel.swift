@@ -49,8 +49,7 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
       .replaceError(with: "")
       .eraseToAnyPublisher()
     
-    let countsDictionary = dependencies.wordsCounterService.countInteractivelyIn(lines: lines)
-      .last()
+    let countsDictionary = dependencies.wordsCounterService.countWordFrequenciesIn(lines: lines)
     
     let items = countsDictionary
       .map { dictionary in

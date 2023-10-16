@@ -9,18 +9,22 @@ import Combine
 import Foundation
 
 protocol WordsCounterServiceProtocol {
-  func countInteractivelyIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never>
+  /// For every line of text emitted by the input publisher, remove all the punctuation characters and whitespaces
+  /// and count frequency of every word across all the emitted lines.
+  /// Empty words are skipped and all words are capitalized.
+  /// Resulting publisher emits once when input publisher is completed.
+  func countWordFrequenciesIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never>
 }
 
 final class WordsCounterService: WordsCounterServiceProtocol {
 
-  func countInteractivelyIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never> {
+  func countWordFrequenciesIn(lines: AnyPublisher<String, Never>) -> AnyPublisher<[String: Int], Never> {
     let result = lines.reduce([String: Int]()) { partialResult, line in
       let lineResult = Self.countWordsIn(line: line)
       return partialResult.merging(lineResult, uniquingKeysWith: +)
     }
     
-    return result.eraseToAnyPublisher()
+    return result.last().eraseToAnyPublisher()
   }
   
   private static func countWordsIn(line: String) -> [String: Int] {

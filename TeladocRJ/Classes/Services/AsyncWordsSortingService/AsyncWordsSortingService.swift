@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 protocol AsyncWordsSortingServiceProtocol {
+  /// Sort items using provided method on a background thread and return the result using a publisher
   func sort(items: [WordFrequenciesItem], by method: WordsSortingMethod) -> AnyPublisher<[WordFrequenciesItem], Never>
 }
 
