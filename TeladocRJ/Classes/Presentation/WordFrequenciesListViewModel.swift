@@ -13,25 +13,6 @@ struct WordFrequenciesCellConfiguration: Hashable {
   let value: String
 }
 
-private struct WordFrequenciesItem {
-  let word: String
-  let count: Int
-}
-
-enum WordsSortingMethod: CaseIterable {
-  case byFrequency
-  case alphabetically
-  case byLength
-  
-  var title: String {
-    switch self {
-    case .byFrequency: return "By Frequency"
-    case .alphabetically: return "Alphabetically"
-    case .byLength: return "By Length"
-    }
-  }
-}
-
 struct WordFrequenciesListViewModelInput {
   let didSelectSortControlItemAtIndex: AnyPublisher<Int, Never>
 }
@@ -50,6 +31,7 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
   struct Dependencies {
     let fileReaderService: FileReaderServiceProtocol
     let wordsCounterService: WordsCounterServiceProtocol
+    let wordsSortingService: AsyncWordsSortingServiceProtocol
   }
   
   private let fileURL: URL
@@ -79,20 +61,15 @@ final class WordFrequenciesListViewModel: WordFrequenciesListViewModelProtocol {
     
     let selectedSortingMethod = input.didSelectSortControlItemAtIndex
       .map { index in WordsSortingMethod.allCases[index] }
+      // initially sort by frequency
       .prepend(WordsSortingMethod.allCases[0])
     
     let sortedItems = items
       .combineLatest(selectedSortingMethod)
-      .map { list, sortingMethod in
-        switch sortingMethod {
-        case .byFrequency:
-          return list.sorted(by: { $0.count > $1.count })
-        case .alphabetically:
-          return list.sorted(by: { $0.word < $1.word })
-        case .byLength:
-          return list.sorted(by: { $0.word.count > $1.word.count })
-        }
+      .map { [dependencies] list, sortingMethod in
+        dependencies.wordsSortingService.sort(items: list, by: sortingMethod)
       }
+      .switchToLatest()
     
     let configurations = sortedItems
       .map { list in
@@ -114,6 +91,18 @@ private extension WordFrequenciesItem {
   
   var asCellConfiguration: WordFrequenciesCellConfiguration {
     .init(title: self.word, value: "\(self.count)")
+  }
+  
+}
+
+private extension WordsSortingMethod {
+  
+  var title: String {
+    switch self {
+    case .byFrequency: return "By Frequency"
+    case .alphabetically: return "Alphabetically"
+    case .byLength: return "By Length"
+    }
   }
   
 }

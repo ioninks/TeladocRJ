@@ -27,6 +27,7 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
   // mocks
   private var fileReaderServiceMock: FileReaderServiceMock!
   private var wordsCounterServiceMock: WordsCounterServiceMock!
+  private var wordsSortingServiceMock: AsyncWordsSortingServiceMock!
   
   // cancellables
   private var cellConfigurationsCancellable: AnyCancellable!
@@ -48,7 +49,9 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     super.tearDown()
   }
   
-  func test_whenReceivedCountsFromTheService_shouldReturnCorrectCellConfigurations() {
+  // MARK: Tests
+  
+  func test_whenReceivedSortedWordsFromService_shouldReturnCorrectCellConfigurations() {
     // given
     setUpViewModel(fileURL: Constants.fileURL)
     
@@ -69,6 +72,13 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(counts)
     wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(completion: .finished)
     
+    // when
+    let sortedWords: [WordFrequenciesItem] = [
+      .init(word: "Yes", count: 2),
+      .init(word: "No", count: 1)
+    ]
+    wordsSortingServiceMock.stubbedSortResultSubject.send(sortedWords)
+    
     // then
     let configurationsSortedByWordFrequencies: [WordFrequenciesCellConfiguration] = [
       .init(title: "Yes", value: "2"),
@@ -78,47 +88,70 @@ final class WordFrequenciesListViewModelTests: XCTestCase {
       cellConfigurationsAccumulator, [configurationsSortedByWordFrequencies],
       "should return configurations for words sorted by frequencies"
     )
+  }
+  
+  func test_whenChosingDifferentSortingMethods_shouldProperlySortWords() {
+    // given
+    setUpViewModel(fileURL: Constants.fileURL)
+    
+    // when
+    wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(Constants.counts)
+    wordsCounterServiceMock.stubbedCountInteractivelyInResult.send(completion: .finished)
+    
+    // then
+    XCTAssertEqual(
+      wordsSortingServiceMock.invokedSortCount, 1,
+      "should sort words once"
+    )
+    XCTAssertEqual(
+      wordsSortingServiceMock.invokedSortMethod, .byFrequency,
+      "should sort words by frequency"
+    )
     
     // when
     didSelectSortControlItemAtIndexSubject.send(1)
     
     // then
-    let configurationsSortedByWordsAlphabetically: [WordFrequenciesCellConfiguration] = [
-      .init(title: "No", value: "1"),
-      .init(title: "Yes", value: "2")
-    ]
     XCTAssertEqual(
-      cellConfigurationsAccumulator.last, configurationsSortedByWordsAlphabetically,
-      "should return configurations for words sorted alphabetically"
+      wordsSortingServiceMock.invokedSortCount, 2,
+      "should sort words the second time"
+    )
+    XCTAssertEqual(
+      wordsSortingServiceMock.invokedSortMethod, .alphabetically,
+      "should sort words alphabetically"
     )
     
     // when
-    didSelectSortControlItemAtIndexSubject.send(2)
+    didSelectSortControlItemAtIndexSubject.send(1)
     
     // then
-    let configurationsSortedByWordLength: [WordFrequenciesCellConfiguration] = [
-      .init(title: "Yes", value: "2"),
-      .init(title: "No", value: "1")
-    ]
     XCTAssertEqual(
-      cellConfigurationsAccumulator.last, configurationsSortedByWordLength,
-      "should return configurations for words sorted by length"
+      wordsSortingServiceMock.invokedSortCount, 3,
+      "should sort words the third time"
+    )
+    XCTAssertEqual(
+      wordsSortingServiceMock.invokedSortMethod, .alphabetically,
+      "should sort words by length"
     )
   }
   
 }
+
+// MARK: - Helper Methods
 
 private extension WordFrequenciesListViewModelTests {
   
   func setUpViewModel(fileURL: URL) {
     fileReaderServiceMock = .init()
     wordsCounterServiceMock = .init()
+    wordsSortingServiceMock = .init()
     
     viewModel = .init(
       fileURL: fileURL,
       dependencies: .init(
         fileReaderService: fileReaderServiceMock,
-        wordsCounterService: wordsCounterServiceMock
+        wordsCounterService: wordsCounterServiceMock,
+        wordsSortingService: wordsSortingServiceMock
       )
     )
     

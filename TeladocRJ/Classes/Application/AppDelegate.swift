@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       fileURL: fileURL,
       dependencies: .init(
         fileReaderService: FileReaderService(),
-        wordsCounterService: WordsCounterService()
+        wordsCounterService: WordsCounterService(),
+        wordsSortingService: AsyncWordsSortingService()
       )
     )
     let viewController = WordFrequenciesListViewController(viewModel: viewModel)
